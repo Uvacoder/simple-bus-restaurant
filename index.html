@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <script defer src="js/script.js"></script>
+    <title>Pearl Grille</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="flex-container logo-container">
+        <a href="#section-about" class="logo-link"
+          ><img
+            src="img/pearl-grille-logo.png"
+            alt="Pearl Grille's logo"
+            class="logo"
+            draggable="false"
+        /></a>
+      </div>
+      <div class="nav-wrap center">
+        <nav class="nav">
+          <div class="sticky-logo-container hidden">
+            <a href="#section-about" class="sticky-logo-link"
+              ><img
+                src="img/pearl-mini-dark.png"
+                alt="Pearl Grille's logo"
+                class="sticky-logo"
+                draggable="false"
+            /></a>
+          </div>
+          <ul class="flex-container nav__list">
+            <li class="nav__item nav__item--1">
+              <a href="#section-about" class="nav__link">About Us</a>
+            </li>
+            <li class="nav__item nav__item--2">
+              <a href="#section-location" class="nav__link">Location</a>
+            </li>
+            <li class="nav__item nav__item--3">
+              <a href="#section-menu" class="nav__link">Menu</a>
+            </li>
+            <li class="nav__item nav__item--4 js--nav-item-4">
+              <a href="#section-reservations" class="nav__link">Reservations</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="sticky__arrow hidden">&raquo;</div>
+        <div class="nav__arrow hidden">&raquo;</div>
+      </div>
+    </header>
+
+    <section class="section section-about" id="section-about">
+      <h1 class="h1 about__heading">About Us</h1>
+      <div class="flex-container about__container">
+        <p class="paragraph about__copy">Seafood lovers, rejoice!</p>
+        <p class="paragraph about__copy">
+          Pearl Grille is a family-owned and operated restaurant. Kevin Pearl
+          and his wife, Maggie, have lived in North Carolina for most of their
+          lives. They share a love for seafood, and a passion for serving their
+          community.
+        </p>
+        <p class="paragraph about__copy">
+          Pearl Grille's doors opened in 2006, in Kure Beach, North Carolina.
+        </p>
+        <p class="paragraph about__copy">
+          Catering to the greater Wilmington area, Pearl Grille is equipped with
+          a full bar, spacious dining area, and plenty of outdoor seating.
+        </p>
+        <p class="paragraph about__copy">
+          Pandemic protocols are in place for the safety of all parties; please
+          call us if you have questions or concerns.
+        </p>
+      </div>
+      <figure class="hero-container">
+        <img
+          class="hero-image"
+          src="/img/heroCropped.jpg"
+          alt="a meal of shrimp and clams over a bed of rice"
+          draggable="false"
+        />
+      </figure>
+    </section>
+
+    <section class="section section-location" id="section-location">
+      <h1 class="h1 location__heading">Location</h1>
+      <div class="flex-container location__info-container">
+        <a
+          class="location__icon-link"
+          href="https://www.google.com/maps/place/120+Fort+Fisher+Blvd+S,+Kure+Beach,+NC+28449/"
+          target="_blank"
+          rel="noopener"
+        >
+          <svg class="location__icon">
+            <use xlink:href="img/sprite.svg#icon-location"></use>
+          </svg>
+        </a>
+        <p class="paragraph location__copy">
+          <a
+            class="location__link location__link--unique"
+            href="https://www.google.com/maps/place/120+Fort+Fisher+Blvd+S,+Kure+Beach,+NC+28449/"
+            target="_blank"
+            rel="noopener"
+            >120 S Fort Fisher Blvd. Kure Beach, NC 28449</a
+          >
+        </p>
+      </div>
+      <div class="flex-container location__info-container">
+        <a href="tel:+1-910-458-1212" class="location__icon-link">
+          <svg class="location__icon">
+            <use xlink:href="img/sprite.svg#icon-phone"></use>
+          </svg>
+        </a>
+        <p class="paragraph location__copy">
+          <a class="location__link" href="tel:+1-910-458-1212">910-458-1212</a>
+        </p>
+      </div>
+
+      <div class="center">
+        <div class="location__photos-grid">
+          <figure class="location__img-position location__img-position--0">
+            <img
+              src="/img/interior cropped.jpeg"
+              alt="interior of restaurant, overlooking beach"
+              class="location__img"
+              draggable="false"
+            />
+          </figure>
+          <figure class="location__img-position location__img-position--1">
+            <img
+              src="img/food1.jpg"
+              alt="oysters"
+              class="location__img"
+              draggable="false"
+            />
+          </figure>
+          <figure class="location__img-position location__img-position--1">
+            <img
+              src="img/food2.jpeg"
+              alt="wine"
+              class="location__img"
+              draggable="false"
+            />
+          </figure>
+          <figure class="location__img-position location__img-position--2">
+            <img
+              src="img/food3.jpg"
+              alt="salmon"
+              class="location__img"
+              draggable="false"
+            />
+          </figure>
+          <figure class="location__img-position location__img-position--2">
+            <img
+              src="img/food4.jpg"
+              alt="crab"
+              class="location__img"
+              draggable="false"
+            />
+          </figure>
+          <figure class="location__img-position location__img-position--3">
+            <img
+              src="img/food5.jpg"
+              alt="tentacles"
+              class="location__img"
+              draggable="false"
+            />
+          </figure>
+          <figure class="location__img-position location__img-position--3">
+            <img
+              src="img/food6.jpg"
+              alt="shrimp"
+              class="location__img"
+              draggable="false"
+            />
+          </figure>
+          <figure class="location__img-position location__img-position--4">
+            <img
+              src="img/food7.jpg"
+              alt="soup"
+              class="location__img"
+              draggable="false"
+            />
+          </figure>
+          <figure class="location__img-position location__img-position--4">
+            <img
+              src="img/food8.jpeg"
+              alt="sushi"
+              class="location__img"
+              draggable="false"
+            />
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-menu" id="section-menu">
+      <h1 class="h1 menu__heading">Menu</h1>
+      <div class="center">
+        <select name="menu" id="menu" class="menu__dropdown">
+          <option value="appetizers" selected>Appetizers</option>
+          <option value="soups">Soups &amp; Salads</option>
+          <option value="main">Main Courses</option>
+          <option value="desserts">Desserts</option>
+          <option value="beverages">Beverages</option>
+        </select>
+      </div>
+      <div class="center">
+        <div class="menu__items-grid">
+          <div class="menu__item">
+            <div class="menu__head-copy">
+              <h4 class="menu__subheading">Shrimp Cocktail</h4>
+              <p class="menu__price">$10</p>
+            </div>
+            <p class="menu__copy">
+              1/3 pound chilled shrimp, served with house cocktail sauce.
+            </p>
+          </div>
+
+          <div class="menu__item">
+            <div class="menu__head-copy">
+              <h4 class="menu__subheading">Fried Clam Strips</h4>
+              <p class="menu__price">$11</p>
+            </div>
+            <p class="menu__copy">
+              Hand breaded and fried to a golden brown. Served with our spicy
+              remoulade sauce.
+            </p>
+          </div>
+
+          <div class="menu__item">
+            <div class="menu__head-copy">
+              <h4 class="menu__subheading">Shrimp Quesadilla</h4>
+              <p class="menu__price">$8</p>
+            </div>
+            <p class="menu__copy">
+              Two flour tortillas stuffed with shrimp, cheese, and onions.
+              Served with sour cream and salsa.
+            </p>
+          </div>
+
+          <div class="menu__item">
+            <div class="menu__head-copy">
+              <h4 class="menu__subheading">Hot Crab Dip</h4>
+              <p class="menu__price">$15</p>
+            </div>
+            <p class="menu__copy">
+              Our savory blend plus blue crab meat. Served with pita points or
+              tortilla chips.
+            </p>
+          </div>
+
+          <div class="menu__item">
+            <div class="menu__head-copy">
+              <h4 class="menu__subheading">Crispy Calamari</h4>
+              <p class="menu__price">$12</p>
+            </div>
+            <p class="menu__copy">
+              Fried in a light batter and served with marinara.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-reservations" id="section-reservations">
+      <h1 class="h1 reservations__heading">Reservations</h1>
+      <div class="center">
+        <div class="reservations__paragraphs">
+          <p class="paragraph reservations__copy">
+            We would love to serve you and yours on a special night out! Please
+            fill out our form to make a reservation. We will do our best to
+            accomodate any requests you may have.
+          </p>
+          <p class="paragraph reservations__copy reservations__copy--right">
+            All fields are mandatory.
+          </p>
+        </div>
+      </div>
+      <div class="center">
+        <form action="#" class="form">
+          <div class="form__group">
+            <label class="form__label" for="name">Name</label>
+            <input
+              class="form__input"
+              type="text"
+              name="name"
+              id="name"
+              required
+            />
+          </div>
+
+          <div class="form__group">
+            <label class="form__label" for="phone">Phone</label>
+            <input
+              class="form__input form__input--phone"
+              type="tel"
+              name="phone"
+              id="phone"
+              required
+            />
+          </div>
+
+          <div class="form__group">
+            <label class="form__label" for="guests">Number of Guests</label>
+            <input
+              class="form__input form__input--small"
+              type="number"
+              name="guests"
+              id="guests"
+              required
+            />
+          </div>
+          <!-- DATE/TIME FIXME:-->
+          <div class="form__group">
+            <label class="form__label" for="dateNTime">Date and Time</label>
+            <input
+              class="form__input form__input--date"
+              type="datetime-local"
+              name="dateNTime"
+              id="dateNTime"
+              placeholder="FIX ME - a new challenge :)"
+              required
+            />
+          </div>
+          <div class="form__group">
+            <label class="form__label" for="message">Special Requests</label>
+            <textarea
+              class="form__textarea"
+              name="message"
+              id="message"
+              placeholder="Contact form is for example purposes only."
+              required
+            ></textarea>
+          </div>
+          <div class="center">
+            <button type="submit" class="btn form__submit">Submit</button>
+          </div>
+        </form>
+      </div>
+    </section>
+    <footer class="footer">
+      <div class="footer__contact-container">
+        <p class="footer__heading">Contact Us</p>
+        <div class="center footer__contact-links">
+          <a
+            href="mailto:fakeEmail@dontSend.com"
+            class="footer__link footer__link--light"
+          >
+            <svg class="footer__icon footer__icon--light">
+              <use xlink:href="img/sprite.svg#icon-envelop"></use>
+            </svg>
+          </a>
+          <a
+            class="footer__link footer__link--light"
+            href="tel:+1-910-000-0000"
+          >
+            <svg class="footer__icon footer__icon--light">
+              <use xlink:href="img/sprite.svg#icon-phone"></use>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer__social-icons">
+        <a
+          href="https://www.yelp.com"
+          target="_blank"
+          rel="noopener"
+          class="footer__link"
+        >
+          <svg class="footer__icon">
+            <use xlink:href="img/sprite.svg#icon-yelp"></use>
+          </svg>
+        </a>
+        <a
+          href="https://www.facebook.com"
+          target="_blank"
+          rel="noopener"
+          class="footer__link"
+        >
+          <svg class="footer__icon">
+            <use xlink:href="img/sprite.svg#icon-facebook"></use>
+          </svg>
+        </a>
+        <a
+          href="https://www.twitter.com"
+          target="_blank"
+          rel="noopener"
+          class="footer__link"
+        >
+          <svg class="footer__icon">
+            <use xlink:href="img/sprite.svg#icon-twitter"></use>
+          </svg>
+        </a>
+        <a
+          href="https://www.instagram.com"
+          target="_blank"
+          rel="noopener"
+          class="footer__link"
+        >
+          <svg class="footer__icon">
+            <use xlink:href="img/sprite.svg#icon-instagram"></use>
+          </svg>
+        </a>
+      </div>
+      <div class="footer__pearl-container">
+        <a href="#section-about" class="footer__logo-link"
+          ><img
+            src="img/pearl-mini-dark.png"
+            alt="Pearl Grille's logo"
+            class="footer__logo"
+            draggable="false"
+        /></a>
+        <p class="footer__pearl-copy">
+          Pearl Grille &copy;<span class="display-date"></span><br />All rights
+          reserved.
+        </p>
+      </div>
+      <p class="footer__copy">Designed &amp; Developed by Alex</p>
+    </footer>
+  </body>
+</html>
