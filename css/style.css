@@ -490,6 +490,12 @@ body {
 .location__info-container:first-of-type {
   margin-top: 4rem;
 }
+.location__hours-container {
+  flex-direction: column;
+  /* STOPPED HERE FIXME: */
+}
+/* other new classes -> location__info-heading (h4) ... location__hours-copy */
+/* after, go back to beverages portion of menu */
 
 .location__copy {
   width: 22rem;

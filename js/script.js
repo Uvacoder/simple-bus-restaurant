@@ -187,6 +187,28 @@ allNavLinks.addEventListener('click', smoothScroll);
 
 ///////////////////
 // Toggle Displayed Content Based on Select Element (Switch Between Menu Categories)
+const inputCategory = document.querySelector('.menu__dropdown');
+const allMenuItems = document.querySelectorAll('.menu__items-grid');
+// const appetizers = document.querySelector('.js--appetizers');
+// const soups = document.querySelector('.js--soups-salads');
+// const mainCourses = document.querySelector('.js--main-courses');
+// const desserts = document.querySelector('.js--desserts');
+// const beverages = document.querySelector('.js--beverages');
+const toggleMenuCategory = function (ev) {
+  console.log(inputCategory.selectedIndex);
+  const index = inputCategory.selectedIndex;
+  // take the index ..
+
+  // remove 'visible-grid' from all elements w a class of menu__items-grid (forEach loop, ternary)
+  // add 'visible-grid' to element with dataAttribute[index]
+  // if item has dataset.category equal to index, add class
+  allMenuItems.forEach(item =>
+    +item.dataset.category !== index
+      ? item.classList.remove('visible-grid')
+      : item.classList.add('visible-grid')
+  );
+};
+inputCategory.addEventListener('change', toggleMenuCategory);
 
 ///////////////////
 // Footer Date (Year)
