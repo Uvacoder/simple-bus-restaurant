@@ -186,6 +186,9 @@ allNavLinks.addEventListener('click', smoothScroll);
 // imgTargets.forEach(img => imgObserver.observe(img));
 
 ///////////////////
+// Toggle Displayed Content Based on Select Element (Switch Between Menu Categories)
+
+///////////////////
 // Footer Date (Year)
 const footerDate = document.querySelector('.display-date');
 footerDate.innerHTML = new Date().getFullYear();
