@@ -123,14 +123,22 @@
           <a class="location__link" href="tel:+1-910-458-1212">910-458-1212</a>
         </p>
       </div>
-      <div class="flex-container location__hours-container">
-        <h4 class="location__info-heading">Hours</h4>
-        <p class="paragraph location__hours-copy">Sunday</p>
-        <p class="paragraph location__hours-copy">11am - 8pm</p>
-        <p class="paragraph location__hours-copy">Monday &mdash; Thursday</p>
-        <p class="paragraph location__hours-copy">3pm - 10pm</p>
-        <p class="paragraph location__hours-copy">Friday &amp; Saturday</p>
-        <p class="paragraph location__hours-copy">2pm - 11pm</p>
+      <h3 class="location__info-heading">Hours</h3>
+      <div class="center">
+        <div class="location__hours-container">
+          <div class="location__hours-group">
+            <p class="paragraph">Sunday</p>
+            <p class="paragraph">11am - 8pm</p>
+          </div>
+          <div class="location__hours-group">
+            <p class="paragraph">Monday &mdash; Thursday</p>
+            <p class="paragraph">3pm - 10pm</p>
+          </div>
+          <div class="location__hours-group">
+            <p class="paragraph">Friday &amp; Saturday</p>
+            <p class="paragraph">2pm - 11pm</p>
+          </div>
+        </div>
       </div>
 
       <div class="center">
@@ -225,11 +233,7 @@
       <div class="center">
         <div
           data-category="0"
-          class="
-            menu__items-grid menu__items-grid--reg
-            js--appetizers
-            visible-grid
-          "
+          class="menu__items-grid menu__items-grid--reg js--appetizers"
         >
           <div class="menu__item">
             <div class="menu__head-copy">
@@ -467,59 +471,212 @@
 
         <div
           data-category="4"
-          class="menu__items-grid menu__items-grid--bev js--beverages"
+          class="
+            menu__items-grid menu__items-grid--bev
+            js--beverages
+            visible-grid
+          "
         >
-          <div class="menu__item">
-            <div class="menu__head-copy">
-              <h4 class="menu__subheading">Beverages -- different format</h4>
-              <p class="menu__price">$10</p>
+          <h2 class="menu__bev-h2">Specialty Cocktails</h2>
+          <div class="menu__item-bev-group">
+            <div class="menu__item-bev">
+              <div class="menu__head-copy-bev">
+                <h4 class="menu__subheading-bev">Traditional Mojito</h4>
+                <p class="menu__price">9</p>
+              </div>
+              <p class="menu__copy">Bacardi Silver</p>
             </div>
-            <p class="menu__copy">
-              1/3 pound chilled shrimp, served with house cocktail sauce.
-            </p>
+            <div class="menu__item-bev">
+              <div class="menu__head-copy-bev">
+                <h4 class="menu__subheading-bev">Flavored Mojito</h4>
+                <p class="menu__price">11</p>
+              </div>
+              <p class="menu__copy">Strawberry, pomegranate, or pineapple</p>
+            </div>
           </div>
 
-          <div class="menu__item">
-            <div class="menu__head-copy">
-              <h4 class="menu__subheading">Fried Clam Strips</h4>
-              <p class="menu__price">$11</p>
+          <div class="menu__item-bev-group">
+            <div class="menu__item-bev">
+              <div class="menu__head-copy-bev">
+                <h4 class="menu__subheading-bev">Traditional Margarita</h4>
+                <p class="menu__price">10</p>
+              </div>
+              <p class="menu__copy">Roca Patrón Silver</p>
             </div>
-            <p class="menu__copy">
-              Hand breaded and fried to a golden brown. Served with our spicy
-              remoulade sauce.
-            </p>
+            <div class="menu__item-bev">
+              <div class="menu__head-copy-bev">
+                <h4 class="menu__subheading-bev">Flavored Margarita</h4>
+                <p class="menu__price">12</p>
+              </div>
+              <p class="menu__copy">Strawberry, pineapple, or mango</p>
+            </div>
           </div>
 
-          <div class="menu__item">
-            <div class="menu__head-copy">
-              <h4 class="menu__subheading">Shrimp Quesadilla</h4>
-              <p class="menu__price">$8</p>
+          <h2 class="menu__bev-h2">Wine</h2>
+          <div class="menu__item-bev-group">
+            <h3 class="menu__bev-h3">White</h3>
+            <div class="menu__item-bev">
+              <div class="menu__head-copy-bev">
+                <h4 class="menu__subheading-bev">Prosecco</h4>
+                <p class="menu__price">38</p>
+              </div>
+              <p class="menu__copy">Italy</p>
             </div>
-            <p class="menu__copy">
-              Two flour tortillas stuffed with shrimp, cheese, and onions.
-              Served with sour cream and salsa.
-            </p>
+            <div class="menu__item-bev">
+              <div class="menu__head-copy-bev">
+                <h4 class="menu__subheading-bev">Brut</h4>
+                <p class="menu__price">10 | 36</p>
+              </div>
+              <p class="menu__copy">Spain</p>
+            </div>
+            <div class="menu__item-bev">
+              <div class="menu__head-copy-bev">
+                <h4 class="menu__subheading-bev">Rosé</h4>
+                <p class="menu__price">8 | 30</p>
+              </div>
+              <p class="menu__copy">Argentina</p>
+            </div>
+            <div class="menu__item-bev">
+              <div class="menu__head-copy-bev">
+                <h4 class="menu__subheading-bev">Riesling</h4>
+                <p class="menu__price">8 | 30</p>
+              </div>
+              <p class="menu__copy">Germany</p>
+            </div>
+            <div class="menu__item-bev">
+              <div class="menu__head-copy-bev">
+                <h4 class="menu__subheading-bev">Pinot Grigio</h4>
+                <p class="menu__price">9 | 34</p>
+              </div>
+              <p class="menu__copy">Italy</p>
+            </div>
+            <div class="menu__item-bev">
+              <div class="menu__head-copy-bev">
+                <h4 class="menu__subheading-bev">Sauvignon Blanc</h4>
+                <p class="menu__price">9 | 32</p>
+              </div>
+              <p class="menu__copy">Chile</p>
+            </div>
+            <div class="menu__item-bev">
+              <div class="menu__head-copy-bev">
+                <h4 class="menu__subheading-bev">Sauvignon Blanc</h4>
+                <p class="menu__price">10 | 38</p>
+              </div>
+              <p class="menu__copy">New Zealand</p>
+            </div>
+            <div class="menu__item-bev">
+              <div class="menu__head-copy-bev">
+                <h4 class="menu__subheading-bev">Chardonnay</h4>
+                <p class="menu__price">9 | 32</p>
+              </div>
+              <p class="menu__copy">Argentina</p>
+            </div>
+            <div class="menu__item-bev">
+              <div class="menu__head-copy-bev">
+                <h4 class="menu__subheading-bev">Chardonnay</h4>
+                <p class="menu__price">11 | 40</p>
+              </div>
+              <p class="menu__copy">California</p>
+            </div>
           </div>
 
-          <div class="menu__item">
-            <div class="menu__head-copy">
-              <h4 class="menu__subheading">Hot Crab Dip</h4>
-              <p class="menu__price">$15</p>
+          <div class="menu__item-bev-group">
+            <h3 class="menu__bev-h3">Red</h3>
+            <div class="menu__item-bev">
+              <div class="menu__head-copy-bev">
+                <h4 class="menu__subheading-bev">Pinot Noir</h4>
+                <p class="menu__price">9 | 34</p>
+              </div>
+              <p class="menu__copy">California</p>
             </div>
-            <p class="menu__copy">
-              Our savory blend plus blue crab meat. Served with pita points or
-              tortilla chips.
-            </p>
+            <div class="menu__item-bev">
+              <div class="menu__head-copy-bev">
+                <h4 class="menu__subheading-bev">Pinot Noir</h4>
+                <p class="menu__price">11 | 42</p>
+              </div>
+              <p class="menu__copy">Oregon</p>
+            </div>
+            <div class="menu__item-bev">
+              <div class="menu__head-copy-bev">
+                <h4 class="menu__subheading-bev">Tempranillo</h4>
+                <p class="menu__price">10 | 36</p>
+              </div>
+              <p class="menu__copy">Spain</p>
+            </div>
+            <div class="menu__item-bev">
+              <div class="menu__head-copy-bev">
+                <h4 class="menu__subheading-bev">Merlot</h4>
+                <p class="menu__price">9 | 32</p>
+              </div>
+              <p class="menu__copy">Chile</p>
+            </div>
+            <div class="menu__item-bev">
+              <div class="menu__head-copy-bev">
+                <h4 class="menu__subheading-bev">Malbec</h4>
+                <p class="menu__price">11 | 40</p>
+              </div>
+              <p class="menu__copy">Argentina</p>
+            </div>
+            <div class="menu__item-bev">
+              <div class="menu__head-copy-bev">
+                <h4 class="menu__subheading-bev">Malbec/Syrah</h4>
+                <p class="menu__price">9 | 34</p>
+              </div>
+              <p class="menu__copy">Argentina</p>
+            </div>
+            <div class="menu__item-bev">
+              <div class="menu__head-copy-bev">
+                <h4 class="menu__subheading-bev">Zinfandel Blend</h4>
+                <p class="menu__price">12 | 44</p>
+              </div>
+              <p class="menu__copy">California</p>
+            </div>
+            <div class="menu__item-bev">
+              <div class="menu__head-copy-bev">
+                <h4 class="menu__subheading-bev">Cabernet Sauvignon</h4>
+                <p class="menu__price">9 | 32</p>
+              </div>
+              <p class="menu__copy">Chile</p>
+            </div>
+            <div class="menu__item-bev">
+              <div class="menu__head-copy-bev">
+                <h4 class="menu__subheading-bev">Cabernet Sauvignon</h4>
+                <p class="menu__price">13 | 48</p>
+              </div>
+              <p class="menu__copy">Washington</p>
+            </div>
           </div>
 
-          <div class="menu__item">
-            <div class="menu__head-copy">
-              <h4 class="menu__subheading">Crispy Calamari</h4>
-              <p class="menu__price">$12</p>
+          <h2 class="menu__bev-h2">Non-Alcoholic</h2>
+          <div class="menu__item-bev-group">
+            <div class="menu__item-bev">
+              <div class="menu__head-copy-bev">
+                <h4 class="menu__subheading-bev">Fresh squeezed lemonade</h4>
+                <p class="menu__price">4</p>
+              </div>
             </div>
-            <p class="menu__copy">
-              Fried in a light batter and served with marinara.
-            </p>
+            <div class="menu__item-bev">
+              <div class="menu__head-copy-bev">
+                <h4 class="menu__subheading-bev">
+                  Fresh squeezed orange juice
+                </h4>
+                <p class="menu__price">4</p>
+              </div>
+            </div>
+          </div>
+          <div class="menu__item-bev-group">
+            <div class="menu__item-bev">
+              <div class="menu__head-copy-bev">
+                <h4 class="menu__subheading-bev">Pepsi products</h4>
+                <p class="menu__price">2</p>
+              </div>
+            </div>
+            <div class="menu__item-bev">
+              <div class="menu__head-copy-bev">
+                <h4 class="menu__subheading-bev">Coffee</h4>
+                <p class="menu__price">2</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>

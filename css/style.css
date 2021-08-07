@@ -264,6 +264,7 @@ body {
     padding: 5px 3.5rem 3px;
   }
   .section-about {
+    padding: 0 3.5rem;
     grid-template-rows: 8rem 6rem 47rem 8rem;
   }
   .about__container {
@@ -491,11 +492,23 @@ body {
   margin-top: 4rem;
 }
 .location__hours-container {
-  flex-direction: column;
-  /* STOPPED HERE FIXME: */
+  display: flex;
+  justify-content: space-between;
+
+  width: 60rem;
+  text-align: center;
 }
-/* other new classes -> location__info-heading (h4) ... location__hours-copy */
-/* after, go back to beverages portion of menu */
+.location__hours-group {
+  width: 161px;
+}
+.location__info-heading {
+  font-size: 23px;
+  font-weight: 300;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  text-align: center;
+  margin: 3.5rem auto 1rem;
+}
 
 .location__copy {
   width: 22rem;
@@ -601,6 +614,16 @@ body {
   }
 }
 @media only screen and (max-width: 37.5em) {
+  .location__hours-container {
+    flex-direction: column;
+    height: 17.5rem;
+    align-items: center;
+
+    max-width: 60rem;
+  }
+  .location__info-heading {
+    font-size: 21px;
+  }
   .location__photos-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
@@ -640,9 +663,6 @@ body {
   }
   .location__info-container:first-of-type {
     margin-top: 1.7rem;
-  }
-  .location__photos-grid {
-    margin-top: 1.5rem;
   }
 }
 
@@ -684,15 +704,33 @@ body {
   row-gap: 4rem;
 }
 .menu__items-grid--bev {
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 10rem;
 }
 
-.menu__item {
+.menu__item-bev-group {
+  width: 250px;
+}
+
+.menu__bev-h2 {
+  grid-column: 1 / -1;
+  justify-self: center;
+}
+/* FIXME: h2 & h3 next -- menu__bev-h2 & menu__bev-h3 */
+
+.menu__item,
+.menu__item-bev {
   display: grid;
+}
+.menu__item {
   row-gap: 9px;
 }
+.menu__item-bev {
+  margin-bottom: 1.2rem;
+}
 
-.menu__head-copy {
-  max-width: 45rem;
+.menu__head-copy,
+.menu__head-copy-bev {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -700,6 +738,12 @@ body {
   font-size: 1.6rem;
   font-weight: 400;
   text-transform: uppercase;
+}
+.menu__head-copy {
+  max-width: 45rem;
+}
+.menu__head-copy-bev {
+  max-width: 25rem;
 }
 .menu__copy {
   font-size: 1.9rem;
