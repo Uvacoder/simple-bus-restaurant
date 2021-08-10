@@ -333,7 +333,7 @@ body {
     font-size: 25px;
   }
   .section-about {
-    background-image: url(/img/hero.jpg);
+    background-image: url(/img/hero-1x.webp);
     background-size: cover;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(2, min-content);
@@ -358,6 +358,12 @@ body {
     grid-row: 1;
     background-color: var(--color-darklight);
     padding: 1.2rem 2.4rem 0.5rem;
+  }
+}
+@media only screen and (min-resolution: 192dpi) and (min-width: 37.5em) and (max-width: 53em),
+  only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em) and (max-width: 53em) {
+  .section-about {
+    background-image: url(/img/hero-2x.webp);
   }
 }
 @media only screen and (max-width: 45em) {
@@ -412,7 +418,7 @@ body {
     font-size: 21px;
   }
   .section-about {
-    background-image: url(/img/hero-mobile.jpg);
+    background-image: url(/img/hero-mobile-1x.webp);
     row-gap: 3rem;
     padding: 6rem 0;
   }
@@ -425,6 +431,12 @@ body {
   }
   .about__heading {
     padding: 0.8rem 1.8rem 0;
+  }
+}
+@media only screen and (min-resolution: 192dpi) and (max-width: 37.5em),
+  only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 37.5em) {
+  .section-about {
+    background-image: url(/img/hero-mobile-2x.webp);
   }
 }
 @media only screen and (max-width: 31em) {
