@@ -145,73 +145,82 @@
         <div class="location__photos-grid">
           <figure class="location__img-position location__img-position--0">
             <img
-              src="/img/interior cropped.jpeg"
+              src="img/interior-LL.webp"
+              data-src="img/interior.webp"
               alt="interior of restaurant, overlooking beach"
-              class="location__img"
+              class="location__img lazy-img"
               draggable="false"
             />
           </figure>
           <figure class="location__img-position location__img-position--1">
             <img
-              src="img/food1.jpg"
+              src="img/food1-LL.webp"
+              data-src="img/food1.webp"
               alt="oysters"
-              class="location__img"
+              class="location__img lazy-img"
               draggable="false"
             />
           </figure>
           <figure class="location__img-position location__img-position--1">
             <img
-              src="img/food2.jpeg"
+              src="img/food2-LL.webp"
+              data-src="img/food2.webp"
               alt="wine"
-              class="location__img"
+              class="location__img lazy-img"
               draggable="false"
             />
           </figure>
           <figure class="location__img-position location__img-position--2">
             <img
-              src="img/food3.jpg"
+              src="img/food3-LL.webp"
+              data-src="img/food3.webp"
               alt="salmon"
-              class="location__img"
+              class="location__img lazy-img"
               draggable="false"
             />
           </figure>
           <figure class="location__img-position location__img-position--2">
             <img
-              src="img/food4.jpg"
+              src="img/food4-LL.webp"
+              data-src="img/food4.webp"
               alt="crab"
-              class="location__img"
+              class="location__img lazy-img"
               draggable="false"
             />
           </figure>
           <figure class="location__img-position location__img-position--3">
             <img
-              src="img/food5.jpg"
+              src="img/food5-LL.webp"
+              data-src="img/food5.webp"
               alt="tentacles"
-              class="location__img"
+              class="location__img lazy-img"
               draggable="false"
             />
           </figure>
           <figure class="location__img-position location__img-position--3">
             <img
-              src="img/food6.jpg"
+              src="img/food6-LL.webp"
+              data-src="img/food6.webp"
               alt="shrimp"
-              class="location__img"
+              class="location__img lazy-img"
               draggable="false"
             />
           </figure>
           <figure class="location__img-position location__img-position--4">
             <img
-              src="img/food7.jpg"
+              src="img/food7-LL.webp"
+              data-src="img/food7.webp"
               alt="soup"
-              class="location__img"
+              class="location__img lazy-img"
               draggable="false"
             />
           </figure>
           <figure class="location__img-position location__img-position--4">
             <img
-              src="img/food8.jpeg"
+              src="img/food8-LL.webp"
+              data-src="img/food8.webp"
               alt="sushi"
-              class="location__img"
+              class="location__img lazy-img"
               draggable="false"
             />
           </figure>
@@ -233,7 +242,11 @@
       <div class="center">
         <div
           data-category="0"
-          class="menu__items-grid menu__items-grid--reg js--appetizers"
+          class="
+            menu__items-grid menu__items-grid--reg
+            js--appetizers
+            visible-grid
+          "
         >
           <div class="menu__item">
             <div class="menu__head-copy">
@@ -471,11 +484,7 @@
 
         <div
           data-category="4"
-          class="
-            menu__items-grid menu__items-grid--bev
-            js--beverages
-            visible-grid
-          "
+          class="menu__items-grid menu__items-grid--bev js--beverages"
         >
           <h2 class="h2 menu__bev-h2">Specialty Cocktails</h2>
           <div class="menu__item-bev-group">

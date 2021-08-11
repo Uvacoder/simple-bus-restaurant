@@ -43,8 +43,6 @@ body {
   padding: 12rem 3.5rem;
   /* IMPORTANT-AF: for combination use with JS smooth-scroll */
   scroll-margin-top: 5rem;
-  /* safari = snap */
-  scroll-snap-margin-top: 5rem;
 }
 
 /* ---------------- */
@@ -310,7 +308,6 @@ body {
     padding: 8rem 2rem;
 
     scroll-margin-top: 3rem;
-    scroll-snap-margin-top: 3rem;
   }
   .header {
     height: 18rem;
@@ -390,7 +387,8 @@ body {
     line-height: 1.5;
   }
   .section {
-    padding: 6rem 2rem;
+    /* padding: 6rem 2rem; */
+    /* FIXME: padding for sections as width decreases */
   }
   .header {
     height: 13.5rem;
@@ -532,6 +530,9 @@ body {
 /* ---------------- */
 .section-location {
   padding-bottom: 3rem;
+}
+.lazy-img {
+  filter: blur(5px);
 }
 
 .location__info-container {
@@ -890,7 +891,7 @@ body {
   }
   .menu__dropdown {
     width: 27rem;
-    margin: 1.5rem 0 2.4rem;
+    /* margin: 2rem 0 3rem; */
   }
   .menu__items-grid--reg {
     row-gap: 2rem;

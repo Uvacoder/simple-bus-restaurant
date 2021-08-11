@@ -130,60 +130,34 @@ allNavLinks.addEventListener('click', smoothScroll);
 ///////////////////
 // Lazy Load Images
 
-// lazy load HTML format ---    <img alt="" class="photo photo--1 lazy-img" src="img/chicago-therapist-1-LL.webp" data-src="img/chicago-therapist-1.webp" draggable="false"/>
 // image switching HTML format ---      <img srcset="img/KHibey-min-1x.webp 300w, img/KHibey-min-2x.webp 600w" sizes="(max-width: 75em) 15vw, (max-width: 34.375em) 27vw, 180px" alt="" src="img/KHibey-min-2x.webp" height="180" width="271" class="therapist-details__photo" draggable="false"/>
+// ...unrelated...
 
-// FROM CORE'S CONTACT PAGE:
-// const initLazyLoad = function () {
-//   const imgTargets = document.querySelectorAll("img[data-src]");
-//   const loadImg = function (entries, observer) {
-//     const [right, left] = entries;
-//     if (!right.isIntersecting) return;
-//     right.target.src = right.target.dataset.src;
-//     if (left) left.target.src = left.target.dataset.src;
-//     right.target.addEventListener("load", function () {
-//       right.target.classList.remove("lazy-img");
-//     });
-//     if (left) {
-//       left.target.addEventListener("load", function () {
-//         left.target.classList.remove("lazy-img");
-//       });
-//     }
-//     observer.unobserve(right.target);
-//     if (left) observer.unobserve(left.target);
-//   };
-//   const imgObserver = new IntersectionObserver(loadImg, {root: null, rootMargin: "200px", threshold: 0});
-//   imgTargets.forEach(img => imgObserver.observe(img));
-// };
-// initLazyLoad();
-
-// FROM JONAS BANKIST WEBSITE
-// const imgTargets = document.querySelectorAll('img[data-src]');
-// const loadImg = function (entries, observer) {
-//   const [entry] = entries;
-//   // console.log(entry);
-
-//   // Guard Clause
-//   if (!entry.isIntersecting) return;
-
-//   // Replace src with data-src
-//   entry.target.src = entry.target.dataset.src;
-
-//   // Remove lazy-img class after image is done loading
-//   entry.target.addEventListener('load', function () {
-//     entry.target.classList.remove('lazy-img');
-//   });
-
-//   // Unobserve
-//   observer.unobserve(entry.target);
-// };
-// const imgObserver = new IntersectionObserver(loadImg, {
-//   root: null,
-//   rootMargin: '200px', // so user doesn't see it before the image has been replaced
-//   threshold: 0,
-// });
-
-// imgTargets.forEach(img => imgObserver.observe(img));
+const imgTargets = document.querySelectorAll('img[data-src]');
+const loadImg = function (entries, observer) {
+  console.log(entries);
+  // TODO: began adapting. here's where you stopped. it's just triggering two at a time. like you told it to
+  const [right, left] = entries;
+  if (!right.isIntersecting) return;
+  right.target.src = right.target.dataset.src;
+  if (left) left.target.src = left.target.dataset.src;
+  right.target.addEventListener('load', function () {
+    right.target.classList.remove('lazy-img');
+  });
+  if (left) {
+    left.target.addEventListener('load', function () {
+      left.target.classList.remove('lazy-img');
+    });
+  }
+  observer.unobserve(right.target);
+  if (left) observer.unobserve(left.target);
+};
+const imgObserver = new IntersectionObserver(loadImg, {
+  root: null,
+  rootMargin: '200px',
+  threshold: 0,
+});
+imgTargets.forEach(img => imgObserver.observe(img));
 
 ///////////////////
 // Toggle Displayed Content Based on Select Element (Switch Between Menu Categories)
