@@ -1,6 +1,6 @@
 'use strict';
 
-// ELEMENTS
+/////// ELEMENTS
 const header = document.querySelector('.header');
 const stickyLogo = document.querySelector('.sticky-logo-container');
 const nav = document.querySelector('.nav');
@@ -18,11 +18,15 @@ const widthBelow672px = window.matchMedia('(max-width: 42em)');
 // For Regular
 const widthBelow576px = window.matchMedia('(max-width: 36em)');
 
+const imgTargets = document.querySelectorAll('img[data-src]');
+
+const inputCategory = document.querySelector('.menu__dropdown');
+const allMenuItems = document.querySelectorAll('.menu__items-grid');
+
 ///////////////////
 // Observer - Toggle Sticky Nav
 const stickyNav = function (entries) {
   const [entry] = entries;
-  //   console.log(entry);
   if (!entry.isIntersecting) {
     stickyArrow.classList.remove('visibleNo');
     nav.classList.add('sticky');
@@ -42,22 +46,18 @@ headerObserver.observe(header);
 
 ///////////////////
 // Section Observer - Navigation - Toggle Active Class
+// FIXME: there's probably still a bug here
 const toggleAct = function (entries) {
   const entry = entries.find(oneEntry => oneEntry.isIntersecting);
-
-  // if 'find' returns undefined:
   if (!entry) return;
 
   const sectionID = '#' + entry.target.id;
   let foundID;
-  let siblings = [];
-  for (const link of navLinks) {
-    link.getAttribute('href') === sectionID
-      ? (foundID = link)
-      : siblings.push(link);
-  }
+  Array.from(navLinks, link => {
+    if (link.getAttribute('href') === sectionID) foundID = link;
+  });
 
-  siblings.forEach(sib => sib.classList.remove('nav__link--active'));
+  navLinks.forEach(link => link.classList.remove('nav__link--active'));
   foundID.classList.add('nav__link--active');
 };
 
@@ -93,7 +93,7 @@ const obsMobileNav = new IntersectionObserver(toggleNavArrow, {
   threshold: 1,
 });
 
-function checkWidth() {
+const checkWidth = function () {
   if (widthBelow672px.matches) {
     obsMobileSticky.observe(lastItem);
   } else {
@@ -107,7 +107,7 @@ function checkWidth() {
     obsMobileNav.unobserve(lastItem);
     navArrow.classList.add('hidden');
   }
-}
+};
 checkWidth();
 widthBelow672px.addEventListener('change', checkWidth);
 widthBelow576px.addEventListener('change', checkWidth);
@@ -131,7 +131,6 @@ allNavLinks.addEventListener('click', smoothScroll);
 // Lazy Load Images
 const removeLazyImg = ev => ev.target.classList.remove('lazy-img');
 
-const imgTargets = document.querySelectorAll('img[data-src]');
 const loadImg = function (entries, observer) {
   // Get the targets
   const [first, ...rest] = entries;
@@ -151,7 +150,6 @@ const loadImg = function (entries, observer) {
   observer.unobserve(first.target);
   if (rest[0]) rest.map(el => observer.unobserve(el.target));
 };
-// Actual observer
 const imgObserver = new IntersectionObserver(loadImg, {
   root: null,
   rootMargin: '200px',
@@ -160,22 +158,12 @@ const imgObserver = new IntersectionObserver(loadImg, {
 imgTargets.forEach(img => imgObserver.observe(img));
 
 ///////////////////
-// Toggle Displayed Content Based on Select Element (Switch Between Menu Categories)
-const inputCategory = document.querySelector('.menu__dropdown');
-const allMenuItems = document.querySelectorAll('.menu__items-grid');
-// const appetizers = document.querySelector('.js--appetizers');
-// const soups = document.querySelector('.js--soups-salads');
-// const mainCourses = document.querySelector('.js--main-courses');
-// const desserts = document.querySelector('.js--desserts');
-// const beverages = document.querySelector('.js--beverages');
+// Toggle Displayed Content Based on State of Select Element (Switch Between Menu Categories)
 const toggleMenuCategory = function (ev) {
-  console.log(inputCategory.selectedIndex);
+  // index = the selected input
   const index = inputCategory.selectedIndex;
-  // take the index ..
 
-  // remove 'visible-grid' from all elements w a class of menu__items-grid (forEach loop, ternary)
-  // add 'visible-grid' to element with dataAttribute[index]
-  // if item has dataset.category equal to index, add class
+  // Loop menu content, display the content that matches the index
   allMenuItems.forEach(item =>
     +item.dataset.category !== index
       ? item.classList.remove('visible-grid')
@@ -191,5 +179,3 @@ footerDate.innerHTML = new Date().getFullYear();
 
 ///////////////////////////////////////
 // TODO:
-// (2) check it out later, when doing form validation... tho they explicitly say it's not the most optimal solution anymore.
-// (2) https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault
