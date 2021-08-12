@@ -129,29 +129,29 @@ allNavLinks.addEventListener('click', smoothScroll);
 
 ///////////////////
 // Lazy Load Images
-
-// image switching HTML format ---      <img srcset="img/KHibey-min-1x.webp 300w, img/KHibey-min-2x.webp 600w" sizes="(max-width: 75em) 15vw, (max-width: 34.375em) 27vw, 180px" alt="" src="img/KHibey-min-2x.webp" height="180" width="271" class="therapist-details__photo" draggable="false"/>
-// ...unrelated...
+const removeLazyImg = ev => ev.target.classList.remove('lazy-img');
 
 const imgTargets = document.querySelectorAll('img[data-src]');
 const loadImg = function (entries, observer) {
-  console.log(entries);
-  // TODO: began adapting. here's where you stopped. it's just triggering two at a time. like you told it to
-  const [right, left] = entries;
-  if (!right.isIntersecting) return;
-  right.target.src = right.target.dataset.src;
-  if (left) left.target.src = left.target.dataset.src;
-  right.target.addEventListener('load', function () {
-    right.target.classList.remove('lazy-img');
-  });
-  if (left) {
-    left.target.addEventListener('load', function () {
-      left.target.classList.remove('lazy-img');
-    });
-  }
-  observer.unobserve(right.target);
-  if (left) observer.unobserve(left.target);
+  // Get the targets
+  const [first, ...rest] = entries;
+  if (!first.isIntersecting) return;
+
+  // Set new data-src
+  first.target.src = first.target.dataset.src;
+  if (rest[0]) rest.map(el => (el.target.src = el.target.dataset.src));
+
+  // Add listeners for removing blur effect
+  first.target.addEventListener('load', removeLazyImg);
+  if (rest[0])
+    rest.map(el => el.target.addEventListener('load', removeLazyImg));
+  // TODO: @ later date: remove the listeners
+
+  // Unobserve targets
+  observer.unobserve(first.target);
+  if (rest[0]) rest.map(el => observer.unobserve(el.target));
 };
+// Actual observer
 const imgObserver = new IntersectionObserver(loadImg, {
   root: null,
   rootMargin: '200px',
