@@ -19,6 +19,7 @@ const widthBelow672px = window.matchMedia('(max-width: 42em)');
 const widthBelow576px = window.matchMedia('(max-width: 36em)');
 
 const imgTargets = document.querySelectorAll('img[data-src]');
+const imgFallbacks = document.querySelectorAll('img[data-fallback]');
 
 const inputCategory = document.querySelector('.menu__dropdown');
 const allMenuItems = document.querySelectorAll('.menu__items-grid');
@@ -70,6 +71,7 @@ allSections.forEach(section => sectionObs.observe(section));
 
 ///////////////////
 // Dynamic Arrows (Mobile Navigation)
+// FIXME: buggy on certain browsers
 const toggleStickyArrow = function (entries) {
   const [entry] = entries;
   !entry.isIntersecting
@@ -156,6 +158,11 @@ const imgObserver = new IntersectionObserver(loadImg, {
   threshold: 0,
 });
 imgTargets.forEach(img => imgObserver.observe(img));
+
+///////////////////
+// Graceful Degradation - webp to png/jpg
+const gracefulImg = ev => (ev.target.src = ev.target.dataset.fallback);
+imgFallbacks.forEach(el => el.addEventListener('error', gracefulImg));
 
 ///////////////////
 // Toggle Displayed Content Based on State of Select Element (Switch Between Menu Categories)

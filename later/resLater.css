@@ -1,0 +1,215 @@
+:root {
+  --color-white: #fffaf5;
+  --color-light: #fdeddc;
+  --color-darklight: #fce5cb;
+  --color-orange: #f0820c;
+  --color-brown: #5e3202;
+  --color-black: #2e1902;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: Lato, sans-serif;
+  background-color: var(--color-light);
+  color: var(--color-black);
+  line-height: 1.7;
+  font-size: 1.8rem;
+  font-weight: 400;
+}
+
+/* ---------------- */
+/* REUSABLE COMPONENTS / HELPERS */
+/* ---------------- */
+
+.flex-container {
+  display: flex;
+}
+.center {
+  display: flex;
+  justify-content: center;
+}
+.section {
+  padding: 12rem 3.5rem;
+  /* IMPORTANT-AF: for combination use with JS smooth-scroll */
+  scroll-margin-top: 5rem;
+}
+
+.h1 {
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 1.1;
+  word-spacing: 2px;
+  letter-spacing: 0.7px;
+  font-size: 4rem;
+  font-weight: 100;
+}
+.h1::after {
+  content: '';
+  display: block;
+  height: 2px;
+  width: 10rem;
+  margin: 1.5rem auto;
+  background-color: var(--color-orange);
+}
+
+/* ---------------- */
+/* SECTION: RESERVATIONS */
+/* ---------------- */
+.section-reservations {
+  background-color: var(--color-darklight);
+}
+
+.reservations__paragraphs {
+  margin-top: 3rem;
+  max-width: 58rem;
+}
+.reservations__copy--right {
+  text-align: right;
+  margin-top: 8px;
+  margin-bottom: 4rem;
+}
+
+.form {
+  width: 47rem;
+}
+
+.form__group {
+  margin-bottom: 2rem;
+
+  display: grid;
+  grid-template-columns: 15rem 3fr;
+  column-gap: 3rem;
+}
+
+.form__label {
+  text-align: right;
+  align-self: start;
+}
+
+.form__input,
+.form__textarea {
+  font-family: inherit;
+  font-size: inherit;
+  color: var(--color-black);
+  background-color: var(--color-white);
+  padding: 4px;
+  border: 1px solid rgba(94, 50, 2, 0.4);
+  width: 28rem;
+}
+
+.form__input {
+  height: 3.5rem;
+}
+.form__input--phone {
+  width: 18rem;
+}
+.form__input--small {
+  width: 6rem;
+}
+.form__input--date {
+  width: 25rem;
+}
+
+.form__textarea {
+  height: 10rem;
+  margin-bottom: 1rem;
+}
+.form__input:focus,
+.form__textarea:focus {
+  outline: var(--color-brown) dotted 2px;
+}
+.form__input:focus:invalid,
+.form__textarea:focus:invalid {
+  outline: var(--color-orange) dotted 2px;
+}
+
+.form__input:focus-visible,
+.form__textarea:focus-visible {
+  outline: var(--color-brown) dashed 3px;
+}
+.form__input:focus-visible:invalid,
+.form__textarea:focus-visible:invalid {
+  outline: var(--color-orange) dashed 3px;
+}
+
+/* BUTTON */
+.btn {
+  border: 3px solid transparent;
+
+  font-family: inherit;
+  text-transform: uppercase;
+  font-size: 2.2rem;
+  font-weight: 300;
+  color: var(--color-white);
+  background-color: var(--color-orange);
+  padding: 0.9rem 2rem;
+  box-shadow: 0 2px 6px rgba(94, 50, 2, 0.3);
+  /* transition: background-color 0.3s box-shadow 0.3s; */
+  transition: all 0.3s;
+}
+.btn:hover,
+.btn:active {
+  background-color: #be5504;
+  box-shadow: initial;
+}
+.btn:focus {
+  border: 3px solid var(--color-white);
+  outline: var(--color-brown) dotted 2px;
+}
+.btn:focus-visible {
+  outline: var(--color-brown) dashed 3px;
+}
+
+/* QUERY: Section Reservations */
+@media only screen and (max-width: 62.5em) {
+  .reservations__copy--right {
+    margin-bottom: 2rem;
+  }
+  .form {
+    width: 28rem;
+  }
+  .form__group {
+    margin-bottom: 1.5rem;
+
+    grid-template-columns: 1fr;
+    row-gap: 3px;
+  }
+  .form__label {
+    text-align: left;
+  }
+}
+@media only screen and (max-width: 53em) {
+  .btn {
+    font-size: 2rem;
+    padding: 0.6rem 2rem;
+  }
+}
+@media only screen and (max-width: 31em) {
+  .reservations__paragraphs {
+    margin-top: 1rem;
+  }
+}
+@media only screen and (max-width: 25em) {
+  .form,
+  .form__input,
+  .form__textarea {
+    width: 26rem;
+  }
+  .form__input--phone {
+    width: 18rem;
+  }
+  .form__input--small {
+    width: 6rem;
+  }
+}

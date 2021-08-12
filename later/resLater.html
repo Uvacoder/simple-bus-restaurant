@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="resLater.css" />
+    <title>when i can implement it</title>
+  </head>
+  <body>
+    <section class="section section-reservations" id="section-reservations">
+      <h1 class="h1 reservations__heading">Reservations</h1>
+      <div class="center">
+        <div class="reservations__paragraphs">
+          <p class="paragraph reservations__copy">
+            We would love to serve you and yours on a special night out! Please
+            fill out our form to make a reservation. We will do our best to
+            accomodate any requests you may have.
+          </p>
+          <p class="paragraph reservations__copy reservations__copy--right">
+            All fields are mandatory.
+          </p>
+        </div>
+      </div>
+      <div class="center">
+        <form action="#" class="form">
+          <div class="form__group">
+            <label class="form__label" for="name">Name</label>
+            <input
+              class="form__input"
+              type="text"
+              name="name"
+              id="name"
+              required
+            />
+          </div>
+
+          <div class="form__group">
+            <label class="form__label" for="phone">Phone</label>
+            <input
+              class="form__input form__input--phone"
+              type="tel"
+              name="phone"
+              id="phone"
+              required
+            />
+          </div>
+
+          <div class="form__group">
+            <label class="form__label" for="guests">Number of Guests</label>
+            <input
+              class="form__input form__input--small"
+              type="number"
+              name="guests"
+              id="guests"
+              required
+            />
+          </div>
+          <!-- DATE/TIME FIXME:-->
+          <div class="form__group">
+            <label class="form__label" for="dateNTime">Date and Time</label>
+            <input
+              class="form__input form__input--date"
+              type="datetime-local"
+              name="dateNTime"
+              id="dateNTime"
+              placeholder="FIX ME - a new challenge :)"
+              required
+            />
+          </div>
+          <div class="form__group">
+            <label class="form__label" for="message">Special Requests</label>
+            <textarea
+              class="form__textarea"
+              name="message"
+              id="message"
+              placeholder="Contact form is for example purposes only."
+              required
+            ></textarea>
+          </div>
+          <div class="center">
+            <button type="submit" class="btn form__submit">Submit</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </body>
+</html>

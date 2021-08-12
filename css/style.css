@@ -241,6 +241,7 @@ body {
   background-color: var(--color-darklight);
   padding: 3.5rem 4rem;
   width: 74rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
   z-index: 10;
 
   grid-row: 3;
@@ -257,7 +258,10 @@ body {
   z-index: 1;
   grid-column: 7 / -1;
   grid-row: 1 / -1;
-  overflow: hidden;
+  /* overflow: hidden !important; */
+  /* FIXME: not done with this. something is still wrong.
+  - could it be the navigation?? the scroll there or something
+  */
 }
 .hero-image,
 .location__img {
@@ -265,7 +269,7 @@ body {
   height: 100%;
   object-fit: cover;
   display: block;
-  overflow: hidden;
+  /* overflow: hidden !important; */
 }
 
 /* QUERY: Header -> About */
@@ -350,6 +354,7 @@ body {
     width: 60rem;
     grid-row: 2;
     padding: 3.5rem 3rem;
+    box-shadow: none;
   }
   .about__heading {
     grid-row: 1;
@@ -549,13 +554,14 @@ body {
 
   width: 60rem;
   text-align: center;
+  margin-bottom: 7rem;
 }
 .location__hours-group {
   width: 161px;
 }
 
 .location__info-heading {
-  margin: 3.5rem auto 1rem;
+  margin: 7rem auto 2.5rem;
 }
 
 .location__copy {
@@ -593,7 +599,7 @@ body {
 
 /* PHOTOS */
 .location__photos-grid {
-  margin-top: 6rem;
+  /* margin-top: 6rem; */
   max-width: 125rem;
 
   display: grid;
@@ -649,7 +655,7 @@ body {
     margin-top: 2.7rem;
   }
   .location__photos-grid {
-    margin-top: 3rem;
+    /* margin-top: 3rem; */
   }
   .location__img {
     opacity: 1;
