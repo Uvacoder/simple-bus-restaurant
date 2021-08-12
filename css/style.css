@@ -308,11 +308,6 @@ body {
   body {
     font-size: 1.7rem;
   }
-  .section {
-    padding: 8rem 2rem;
-
-    scroll-margin-top: 3rem;
-  }
   .header {
     height: 18rem;
   }
@@ -383,6 +378,11 @@ body {
   .nav__list:not(.sticky .nav__list) {
     margin-left: 2rem;
   }
+  .section {
+    padding: 8rem 2rem;
+
+    scroll-margin-top: 3rem;
+  }
   .section-about {
     padding: 8rem 0;
   }
@@ -390,10 +390,6 @@ body {
 @media only screen and (max-width: 37.5em) {
   body {
     line-height: 1.5;
-  }
-  .section {
-    /* padding: 6rem 2rem; */
-    /* FIXME: padding for sections as width decreases */
   }
   .header {
     height: 13.5rem;
@@ -423,7 +419,6 @@ body {
   .section-about {
     background-image: url(/img/hero-mobile-1x.webp);
     row-gap: 3rem;
-    padding: 6rem 0;
   }
   .about__container {
     width: 100%;
@@ -447,7 +442,10 @@ body {
     font-size: 1.6rem;
   }
   .section {
-    padding: 5rem 1.5rem;
+    padding: 6rem 2rem;
+  }
+  .section-about {
+    padding: 6rem 0;
   }
   .header {
     height: 12rem;
@@ -513,20 +511,13 @@ body {
   .sticky__arrow {
     top: 0.2rem;
   }
-  .section-about {
-    row-gap: 1.8rem;
-    padding: 4rem 0;
-  }
   .about__container {
     padding: 2.5rem 1.5rem;
   }
 }
 @media only screen and (max-width: 25em) {
-  .section {
-    padding: 4rem 1.5rem;
-  }
   .section-about {
-    padding: 4rem 0;
+    padding: 4rem 0 6rem;
   }
 }
 
@@ -543,10 +534,12 @@ body {
 .location__info-container {
   justify-content: center;
   align-items: center;
-  margin-top: 2.5rem;
 }
-.location__info-container:first-of-type {
+.location__info-container--1 {
   margin-top: 4rem;
+}
+.location__info-container--2 {
+  margin-top: 2.5rem;
 }
 .location__hours-container {
   display: flex;
@@ -599,7 +592,6 @@ body {
 
 /* PHOTOS */
 .location__photos-grid {
-  /* margin-top: 6rem; */
   max-width: 125rem;
 
   display: grid;
@@ -648,14 +640,17 @@ body {
   }
 }
 @media only screen and (max-width: 53em) {
-  .location__info-container {
+  .location__info-container--1 {
+    margin-top: 3rem;
+  }
+  .location__info-container--2 {
     margin-top: 1.5rem;
   }
-  .location__info-container:first-of-type {
-    margin-top: 2.7rem;
+  .location__info-heading {
+    margin: 4rem auto 2rem;
   }
-  .location__photos-grid {
-    /* margin-top: 3rem; */
+  .location__hours-container {
+    margin-bottom: 4rem;
   }
   .location__img {
     opacity: 1;
@@ -670,7 +665,7 @@ body {
 @media only screen and (max-width: 37.5em) {
   .location__hours-container {
     flex-direction: column;
-    height: 17.5rem;
+    height: 16.5rem;
     align-items: center;
 
     max-width: 60rem;
@@ -709,11 +704,14 @@ body {
   .location__copy {
     width: 19rem;
   }
-  .location__info-container {
+  .location__info-container--1 {
+    margin-top: 2rem;
+  }
+  .location__info-container--2 {
     margin-top: 1rem;
   }
-  .location__info-container:first-of-type {
-    margin-top: 1.7rem;
+  .location__info-heading {
+    margin: 4rem auto 1.5rem;
   }
 }
 
@@ -914,31 +912,30 @@ body {
 }
 
 /* ---------------- */
-/* SECTION: RESERVATIONS */
+/* SECTION: CONTACT */
 /* ---------------- */
-.section-reservations {
+.section-contact {
   background-color: var(--color-darklight);
 }
 
-.reservations__paragraphs {
-  margin-top: 3rem;
+.contact__paragraphs {
+  margin: 3rem auto 4rem;
   max-width: 58rem;
 }
-.reservations__copy--right {
+.contact__copy--right {
   text-align: right;
-  margin-top: 8px;
-  margin-bottom: 4rem;
+  margin-top: 12px;
 }
 
 .form {
-  width: 47rem;
+  /* width: 47rem; */
 }
 
 .form__group {
   margin-bottom: 2rem;
 
   display: grid;
-  grid-template-columns: 15rem 3fr;
+  grid-template-columns: 10rem 3fr;
   column-gap: 3rem;
 }
 
@@ -955,24 +952,20 @@ body {
   background-color: var(--color-white);
   padding: 4px;
   border: 1px solid rgba(94, 50, 2, 0.4);
-  width: 28rem;
 }
 
 .form__input {
   height: 3.5rem;
 }
-.form__input--phone {
-  width: 18rem;
+.form__input--name {
+  width: 22rem;
 }
-.form__input--small {
-  width: 6rem;
+.form__input--email {
+  width: 28rem;
 }
-.form__input--date {
-  width: 25rem;
-}
-
 .form__textarea {
-  height: 10rem;
+  height: 15rem;
+  width: 32rem;
   margin-bottom: 1rem;
 }
 .form__input:focus,
@@ -1020,13 +1013,10 @@ body {
 .btn:focus-visible {
   outline: var(--color-brown) dashed 3px;
 }
-/* QUERY: Section Reservations */
+/* QUERY: Section Contact */
 @media only screen and (max-width: 62.5em) {
-  .reservations__copy--right {
-    margin-bottom: 2rem;
-  }
   .form {
-    width: 28rem;
+    /* width: 28rem; */
   }
   .form__group {
     margin-bottom: 1.5rem;
@@ -1045,8 +1035,9 @@ body {
   }
 }
 @media only screen and (max-width: 31em) {
-  .reservations__paragraphs {
-    margin-top: 1rem;
+  .contact__paragraphs {
+    /* FIXME: */
+    /* margin-top: 1rem; */
   }
 }
 @media only screen and (max-width: 25em) {
@@ -1055,11 +1046,8 @@ body {
   .form__textarea {
     width: 26rem;
   }
-  .form__input--phone {
+  .form__input--email {
     width: 18rem;
-  }
-  .form__input--small {
-    width: 6rem;
   }
 }
 

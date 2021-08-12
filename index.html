@@ -53,7 +53,7 @@
               <a href="#section-menu" class="nav__link">Menu</a>
             </li>
             <li class="nav__item nav__item--4 js--nav-item-4">
-              <a href="#section-reservations" class="nav__link">Reservations</a>
+              <a href="#section-contact" class="nav__link">Contact Us</a>
             </li>
           </ul>
         </nav>
@@ -101,7 +101,12 @@
 
     <section class="section section-location" id="section-location">
       <h1 class="h1 location__heading">Location</h1>
-      <div class="flex-container location__info-container">
+      <div
+        class="
+          flex-container
+          location__info-container location__info-container--1
+        "
+      >
         <a
           class="location__icon-link"
           href="https://www.google.com/maps/place/120+Fort+Fisher+Blvd+S,+Kure+Beach,+NC+28449/"
@@ -122,7 +127,12 @@
           >
         </p>
       </div>
-      <div class="flex-container location__info-container">
+      <div
+        class="
+          flex-container
+          location__info-container location__info-container--2
+        "
+      >
         <a href="tel:+1-910-458-1212" class="location__icon-link">
           <svg class="location__icon">
             <use xlink:href="img/sprite.svg#icon-phone"></use>
@@ -724,16 +734,15 @@
       </div>
     </section>
 
-    <section class="section section-reservations" id="section-reservations">
-      <h1 class="h1 reservations__heading">Reservations</h1>
+    <section class="section section-contact" id="section-contact">
+      <h1 class="h1 contact__heading">Contact Us</h1>
       <div class="center">
-        <div class="reservations__paragraphs">
-          <p class="paragraph reservations__copy">
-            We would love to serve you and yours on a special night out! Please
-            fill out our form to make a reservation. We will do our best to
-            accomodate any requests you may have.
+        <div class="contact__paragraphs">
+          <p class="paragraph contact__copy">
+            We would love to hear what you have to say! We take all feedback to
+            heart. Please fill out our form to get in touch with Maggie.
           </p>
-          <p class="paragraph reservations__copy reservations__copy--right">
+          <p class="paragraph contact__copy contact__copy--right">
             All fields are mandatory.
           </p>
         </div>
@@ -743,7 +752,7 @@
           <div class="form__group">
             <label class="form__label" for="name">Name</label>
             <input
-              class="form__input"
+              class="form__input form__input--name"
               type="text"
               name="name"
               id="name"
@@ -752,45 +761,23 @@
           </div>
 
           <div class="form__group">
-            <label class="form__label" for="phone">Phone</label>
+            <label class="form__label" for="email">Email</label>
             <input
-              class="form__input form__input--phone"
+              class="form__input form__input--email"
               type="tel"
-              name="phone"
-              id="phone"
+              name="email"
+              id="email"
               required
             />
           </div>
 
           <div class="form__group">
-            <label class="form__label" for="guests">Number of Guests</label>
-            <input
-              class="form__input form__input--small"
-              type="number"
-              name="guests"
-              id="guests"
-              required
-            />
-          </div>
-          <!-- DATE/TIME FIXME:-->
-          <div class="form__group">
-            <label class="form__label" for="dateNTime">Date and Time</label>
-            <input
-              class="form__input form__input--date"
-              type="datetime-local"
-              name="dateNTime"
-              id="dateNTime"
-              placeholder="FIX ME - a new challenge :)"
-              required
-            />
-          </div>
-          <div class="form__group">
-            <label class="form__label" for="message">Special Requests</label>
+            <label class="form__label" for="message">Message</label>
             <textarea
               class="form__textarea"
               name="message"
               id="message"
-              placeholder="Contact form is for example purposes only."
+              placeholder="form not functional."
               required
             ></textarea>
           </div>
@@ -805,7 +792,7 @@
         <p class="footer__heading">Contact Us</p>
         <div class="center footer__contact-links">
           <a
-            href="mailto:fakeEmail@dontSend.com"
+            href="mailto:&#109;&#097;&#103;&#103;&#105;&#101;&#064;&#112;&#101;&#097;&#114;&#108;&#045;&#103;&#114;&#105;&#108;&#108;&#101;&#046;&#099;&#111;&#109;"
             class="footer__link footer__link--light"
           >
             <svg class="footer__icon footer__icon--light">
@@ -814,7 +801,7 @@
           </a>
           <a
             class="footer__link footer__link--light"
-            href="tel:+1-910-000-0000"
+            href="tel:+1-910-458-1212"
           >
             <svg class="footer__icon footer__icon--light">
               <use xlink:href="img/sprite.svg#icon-phone"></use>
