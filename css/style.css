@@ -1016,9 +1016,9 @@ body {
   color: #111;
   font-weight: 500;
   font-size: 14px;
-  line-height: 1.3;
+  line-height: 1;
 
-  align-self: flex-end;
+  align-self: center;
   margin-left: 4px;
 }
 .valid:focus {
@@ -1049,11 +1049,21 @@ body {
 }
 @media only screen and (max-width: 45em) {
   .form__group {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 
     grid-template-columns: 1fr;
     row-gap: 3px;
   }
+  .form__input,
+  .form__textarea {
+    grid-row: 2;
+    margin-bottom: 1rem;
+  }
+
+  .form-constraint {
+    grid-column: 1;
+  }
+
   .form__label {
     text-align: left;
   }
@@ -1063,6 +1073,10 @@ body {
   .form__input,
   .form__textarea {
     width: 26rem;
+  }
+
+  .form-constraint {
+    justify-self: center;
   }
 }
 /* #endregion CONTACT */
