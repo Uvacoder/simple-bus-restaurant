@@ -1014,10 +1014,13 @@ body {
   outline: var(--color-brown) dashed 3px;
 }
 /* QUERY: Section Contact */
-@media only screen and (max-width: 62.5em) {
-  .form {
-    /* width: 28rem; */
+@media only screen and (max-width: 53em) {
+  .btn {
+    font-size: 2rem;
+    padding: 0.6rem 2rem;
   }
+}
+@media only screen and (max-width: 45em) {
   .form__group {
     margin-bottom: 1.5rem;
 
@@ -1026,12 +1029,6 @@ body {
   }
   .form__label {
     text-align: left;
-  }
-}
-@media only screen and (max-width: 53em) {
-  .btn {
-    font-size: 2rem;
-    padding: 0.6rem 2rem;
   }
 }
 @media only screen and (max-width: 31em) {
@@ -1045,9 +1042,6 @@ body {
   .form__input,
   .form__textarea {
     width: 26rem;
-  }
-  .form__input--email {
-    width: 18rem;
   }
 }
 
