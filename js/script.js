@@ -28,6 +28,10 @@ const contactForm = document.querySelector('.form');
 const formInputs = document.querySelectorAll('.form__input');
 const formTextarea = document.querySelector('.form__textarea');
 
+const submitBtn = document.querySelector('.form__submit');
+const submitResponseBlock = document.querySelector('.submit-clicked');
+const contactSection = document.querySelector('.section-contact');
+
 ///////////////////
 // #region Observer - Toggle Sticky Nav
 const stickyNav = function (entries) {
@@ -240,6 +244,18 @@ contactForm.addEventListener('keyup', passToValidator);
 // formTextarea.onfocus = removeBgColor;
 // ^ NOTE: it works fine, i just don't like it.
 // #endregion Validate Form Input
+
+/////////////////////
+// Animated message if user clicks submit on form.
+submitBtn.addEventListener('click', handleSubmit);
+
+function handleSubmit(ev) {
+  ev.preventDefault();
+
+  contactSection.classList.add('section-override');
+  submitResponseBlock.classList.add('fadeInRight');
+  submitResponseBlock.classList.remove('hidden');
+}
 
 ///////////////////
 // Footer Date (Year)
