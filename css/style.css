@@ -50,6 +50,10 @@ body {
   scroll-margin-top: 5rem;
 }
 
+.section-override {
+  padding: 12rem 3.5rem 3.3rem;
+}
+
 /* ---------------- */
 /* #region SECTION: HEADER */
 /* ---------------- */
@@ -278,6 +282,11 @@ body {
   .section {
     padding: 8rem 3.5rem;
   }
+
+  .section-override {
+    padding: 8rem 3.5rem 2rem;
+  }
+
   .sticky {
     padding: 5px 3.5rem 3px;
   }
@@ -375,6 +384,11 @@ body {
 
     scroll-margin-top: 3rem;
   }
+
+  .section-override {
+    padding: 8rem 3rem 2rem;
+  }
+
   .section-about {
     padding: 8rem 0;
   }
@@ -435,6 +449,9 @@ body {
   }
   .section {
     padding: 6rem 3rem;
+  }
+  .section-override {
+    padding: 6rem 3rem 2rem;
   }
   .section-about {
     padding: 6rem 0;
@@ -917,6 +934,7 @@ body {
   margin: 3rem auto 4rem;
   max-width: 58rem;
 }
+
 .contact__copy--right {
   text-align: right;
   margin-top: 12px;
@@ -966,23 +984,28 @@ body {
 
 /* BUTTON */
 .btn {
+  display: inline-block;
+  vertical-align: middle;
   border: 3px solid transparent;
-
   font-family: inherit;
   text-transform: uppercase;
   font-size: 2.2rem;
   font-weight: 300;
-  color: var(--color-white);
-  background-color: var(--color-orange);
+  color: var(--color-brown);
+  background-color: #fd8e17;
   padding: 0.9rem 2rem;
   box-shadow: 0 2px 6px rgba(94, 50, 2, 0.3);
-  /* transition: background-color 0.3s box-shadow 0.3s; */
-  transition: all 0.3s;
+  cursor: pointer;
+
+  transform: perspective(1px) translateZ(0);
+  transition-duration: 0.3s;
+  transition-property: box-shadow, transform, color;
 }
 .btn:hover,
 .btn:active {
-  background-color: #be5504;
-  box-shadow: initial;
+  background-color: #ff890a;
+  box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
+  transform: scale(1.1);
 }
 .btn:focus {
   border: 3px solid var(--color-white);
@@ -1039,6 +1062,35 @@ body {
   margin-bottom: 1rem;
 }
 /* ---------- END FORM VALIDATION ---------- */
+.submit-clicked {
+  display: block;
+  margin: 3rem auto 0;
+  background-color: var(--color-brown);
+  width: 16.8rem;
+  padding: 8px 12px;
+  color: var(--color-darklight);
+  font-size: 16px;
+  line-height: 1.3;
+  border-radius: 1px;
+}
+
+.fadeInRight {
+  animation-name: fadeInRight;
+  animation-duration: 2s;
+}
+
+/* Clicked Submit */
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translate3d(100%, -35%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
 
 /* QUERY: Section Contact */
 @media only screen and (max-width: 53em) {
@@ -1086,7 +1138,7 @@ body {
 /* ---------------- */
 .footer {
   background-color: var(--color-black);
-  color: var(--color-light);
+  color: var(--color-darklight);
   padding: 3rem 3.5rem;
 
   display: grid;
@@ -1144,7 +1196,7 @@ body {
 }
 
 .footer__icon {
-  fill: var(--color-light);
+  fill: var(--color-darklight);
   transition: fill 0.2s;
 }
 .footer__icon:hover {
