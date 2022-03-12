@@ -479,10 +479,10 @@ body {
     margin-right: 1rem;
   }
   .sticky {
-    padding: 1px 3rem 0 1rem;
+    padding: 5px 3rem 3px 1rem;
   }
   .sticky-logo {
-    height: 4rem;
+    height: 4.5rem;
   }
   .nav__arrow,
   .sticky__arrow {
@@ -490,9 +490,6 @@ body {
   }
   .nav__arrow {
     top: 6.8rem;
-  }
-  .sticky__arrow {
-    top: 0.2rem;
   }
   .about__container {
     padding: 2.5rem 1.5rem;
