@@ -25,7 +25,7 @@ const inputCategory = document.querySelector('.menu__dropdown');
 const allMenuItems = document.querySelectorAll('.menu__items-grid');
 
 ///////////////////
-// Observer - Toggle Sticky Nav
+// #region Observer - Toggle Sticky Nav
 const stickyNav = function (entries) {
   const [entry] = entries;
   if (!entry.isIntersecting) {
@@ -44,9 +44,10 @@ const headerObserver = new IntersectionObserver(stickyNav, {
   threshold: 0,
 });
 headerObserver.observe(header);
+// #endregion Observer - Toggle Sticky Nav
 
 ///////////////////
-// Section Observer - Navigation - Toggle Active Class
+// #region Section Observer - Navigation - Toggle Active Class
 const toggleAct = function (entries) {
   const entry = entries.find(oneEntry => oneEntry.isIntersecting);
   if (!entry) return;
@@ -67,9 +68,10 @@ const sectionObs = new IntersectionObserver(toggleAct, {
 });
 
 allSections.forEach(section => sectionObs.observe(section));
+// #endregion Section Observer
 
 ///////////////////
-// Dynamic Arrows (Mobile Navigation)
+// #region Dynamic Arrows (Mobile Navigation)
 const toggleStickyArrow = function (entries) {
   const [entry] = entries;
   !entry.isIntersecting
@@ -106,9 +108,10 @@ const checkWidth = function () {
 checkWidth();
 widthBelow672px.addEventListener('change', checkWidth);
 widthBelow576px.addEventListener('change', checkWidth);
+// #endregion Dynamic Arrows
 
 ///////////////////
-// Scroll to Section on Click
+// #region Scroll to Section on Click
 const smoothScroll = function (ev) {
   ev.preventDefault();
   // ^ prevents #anchor from appearing in the address bar
@@ -121,9 +124,10 @@ const smoothScroll = function (ev) {
   }
 };
 allNavLinks.addEventListener('click', smoothScroll);
+// #endregion Scroll to Section on Click
 
 ///////////////////
-// Lazy Load Images
+// #region Lazy Load Images
 const removeLazyImg = ev => ev.target.classList.remove('lazy-img');
 
 const loadImg = function (entries, observer) {
@@ -139,7 +143,6 @@ const loadImg = function (entries, observer) {
   first.target.addEventListener('load', removeLazyImg);
   if (rest[0])
     rest.map(el => el.target.addEventListener('load', removeLazyImg));
-  // TODO: @ later date: remove the listeners
 
   // Unobserve targets
   observer.unobserve(first.target);
@@ -151,6 +154,7 @@ const imgObserver = new IntersectionObserver(loadImg, {
   threshold: 0,
 });
 imgTargets.forEach(img => imgObserver.observe(img));
+// #endregion Lazy Load Images
 
 ///////////////////
 // Graceful Degradation - webp to png/jpg
