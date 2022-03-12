@@ -27,7 +27,6 @@ const allMenuItems = document.querySelectorAll('.menu__items-grid');
 const contactForm = document.querySelector('.form');
 const formInputs = document.querySelectorAll('.form__input');
 const formTextarea = document.querySelector('.form__textarea');
-// const formBtnSubmit = document.querySelector('.form__submit');
 
 ///////////////////
 // #region Observer - Toggle Sticky Nav
@@ -169,6 +168,9 @@ imgFallbacks.forEach(el => el.addEventListener('error', gracefulImg));
 ///////////////////
 // Toggle Displayed Content Based on State of Select Element (Switch Between Menu Categories)
 const toggleMenuCategory = function (ev) {
+  // So the focus state goes away
+  ev.target.blur();
+
   // index = the selected input
   const index = inputCategory.selectedIndex;
 
