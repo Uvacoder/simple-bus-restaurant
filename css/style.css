@@ -228,7 +228,7 @@ body {
   grid-template-columns: repeat(2, 1fr) 2fr repeat(7, 1fr);
   grid-template-rows: 12rem 6rem 47rem 12rem;
 
-  padding: 0 3.5rem;
+  padding: 0 0 0 3.5rem;
 }
 
 .about__heading {
@@ -258,10 +258,6 @@ body {
   z-index: 1;
   grid-column: 7 / -1;
   grid-row: 1 / -1;
-  /* overflow: hidden !important; */
-  /* FIXME: not done with this. something is still wrong.
-  - could it be the navigation?? the scroll there or something
-  */
 }
 .hero-image,
 .location__img {
@@ -269,7 +265,6 @@ body {
   height: 100%;
   object-fit: cover;
   display: block;
-  /* overflow: hidden !important; */
 }
 
 /* QUERY: Header -> About */
@@ -281,15 +276,8 @@ body {
     padding: 5px 3.5rem 3px;
   }
   .section-about {
-    padding: 0 3.5rem;
+    padding: 0 0 0 3.5rem;
     grid-template-rows: 8rem 6rem 47rem 8rem;
-  }
-  .about__container {
-    grid-column: 2 / 8;
-  }
-  .hero-container {
-    width: 40rem;
-    grid-column: 8 / -1;
   }
 }
 @media only screen and (max-width: 62.5em) {
@@ -298,35 +286,6 @@ body {
   }
   .sticky-logo {
     height: 6rem;
-  }
-  .about__container {
-    grid-column: 1 / 8;
-    width: 70rem;
-  }
-}
-@media only screen and (max-width: 53em) {
-  body {
-    font-size: 1.7rem;
-  }
-  .header {
-    height: 18rem;
-  }
-  .logo-container {
-    padding: 3rem 0 1.5rem;
-  }
-  .logo {
-    width: 30rem;
-  }
-  .h1 {
-    font-size: 3.5rem;
-    letter-spacing: 0.5px;
-  }
-  .h1::after {
-    width: 7.8rem;
-    margin: 1rem auto;
-  }
-  .h2 {
-    font-size: 25px;
   }
   .section-about {
     background-image: url(/img/hero-1x.webp);
@@ -355,6 +314,29 @@ body {
     grid-row: 1;
     background-color: var(--color-darklight);
     padding: 1.2rem 2.4rem 0.5rem;
+  }
+}
+
+@media only screen and (max-width: 53em) {
+  .header {
+    height: 18rem;
+  }
+  .logo-container {
+    padding: 3rem 0 1.5rem;
+  }
+  .logo {
+    width: 30rem;
+  }
+  .h1 {
+    font-size: 3.5rem;
+    letter-spacing: 0.5px;
+  }
+  .h1::after {
+    width: 7.8rem;
+    margin: 1rem auto;
+  }
+  .h2 {
+    font-size: 25px;
   }
 }
 @media only screen and (min-resolution: 192dpi) and (min-width: 37.5em) and (max-width: 53em),
