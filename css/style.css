@@ -1199,7 +1199,8 @@ body {
     padding: 5px;
   }
 }
-@media only screen and (max-width: 37.5em) {
+
+@media only screen and (max-width: 45em) {
   .footer {
     padding: 3rem 1.5rem;
     grid-template-columns: 1fr;
@@ -1220,26 +1221,18 @@ body {
   }
   .footer__social-icons {
     margin-top: 1.5rem;
+    width: 24rem;
+  }
+
+  .footer__social-icons .footer__icon {
+    height: 3rem;
+    width: 3rem;
   }
 }
 @media only screen and (max-width: 31em) {
   .footer__heading {
     font-size: 2rem;
     letter-spacing: 0.5px;
-  }
-  .footer__contact-links .footer__icon {
-    height: 2.5rem;
-    width: 2.5rem;
-  }
-  .footer__social-icons .footer__icon {
-    height: 2rem;
-    width: 2rem;
-  }
-  .footer__social-icons {
-    width: 20rem;
-  }
-  .footer__social-icons .footer__link {
-    padding: 8px;
   }
 }
 @media only screen and (max-width: 25em) {
