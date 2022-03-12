@@ -47,7 +47,6 @@ headerObserver.observe(header);
 
 ///////////////////
 // Section Observer - Navigation - Toggle Active Class
-// FIXME: there's probably still a bug here
 const toggleAct = function (entries) {
   const entry = entries.find(oneEntry => oneEntry.isIntersecting);
   if (!entry) return;
@@ -71,7 +70,6 @@ allSections.forEach(section => sectionObs.observe(section));
 
 ///////////////////
 // Dynamic Arrows (Mobile Navigation)
-// FIXME: buggy on certain browsers
 const toggleStickyArrow = function (entries) {
   const [entry] = entries;
   !entry.isIntersecting
@@ -85,15 +83,10 @@ const toggleNavArrow = function (entries) {
     : navArrow.classList.add('hidden');
 };
 
-const obsMobileSticky = new IntersectionObserver(toggleStickyArrow, {
-  root: nav,
-  rootMargin: '-10px',
-  threshold: 1,
-});
-const obsMobileNav = new IntersectionObserver(toggleNavArrow, {
-  root: nav,
-  threshold: 1,
-});
+const options = { root: nav, threshold: 1 };
+
+const obsMobileSticky = new IntersectionObserver(toggleStickyArrow, options);
+const obsMobileNav = new IntersectionObserver(toggleNavArrow, options);
 
 const checkWidth = function () {
   if (widthBelow672px.matches) {
@@ -183,6 +176,3 @@ inputCategory.addEventListener('change', toggleMenuCategory);
 // Footer Date (Year)
 const footerDate = document.querySelector('.display-date');
 footerDate.innerHTML = new Date().getFullYear();
-
-///////////////////////////////////////
-// TODO:

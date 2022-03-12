@@ -387,7 +387,7 @@ body {
     margin-bottom: 2rem;
   }
   .nav__item--4:not(.sticky .nav__item--4) {
-    padding-right: 4rem;
+    padding-right: 3rem;
   }
   .h1 {
     font-size: 2.4rem;
