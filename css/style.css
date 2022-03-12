@@ -46,7 +46,7 @@ body {
 }
 
 /* ---------------- */
-/* SECTION: HEADER */
+/* #region SECTION: HEADER */
 /* ---------------- */
 .header {
   background-color: var(--color-darklight);
@@ -218,9 +218,10 @@ body {
 .h3 {
   font-size: 23px;
 }
+/* #endregion HEADER */
 
 /* ---------------- */
-/* SECTION: ABOUT */
+/* #region SECTION: ABOUT */
 /* ---------------- */
 .section-about {
   background-color: #fff;
@@ -421,7 +422,7 @@ body {
 }
 @media only screen and (max-width: 31em) {
   body {
-    font-size: 1.6rem;
+    font-size: 1.7rem;
   }
   .section {
     padding: 6rem 2rem;
@@ -502,9 +503,10 @@ body {
     padding: 4rem 0 6rem;
   }
 }
+/* #endregion ABOUT */
 
 /* ---------------- */
-/* SECTION: LOCATION */
+/* #region SECTION: LOCATION */
 /* ---------------- */
 .section-location {
   padding-bottom: 3rem;
@@ -696,9 +698,10 @@ body {
     margin: 4rem auto 1.5rem;
   }
 }
+/* #endregion LOCATION */
 
 /* ---------------- */
-/* SECTION: MENU */
+/* #region SECTION: MENU */
 /* ---------------- */
 .menu__dropdown {
   font-family: inherit;
@@ -892,9 +895,10 @@ body {
     margin-bottom: 1.1rem;
   }
 }
+/* #endregion MENU */
 
 /* ---------------- */
-/* SECTION: CONTACT */
+/* #region SECTION: CONTACT */
 /* ---------------- */
 .section-contact {
   background-color: var(--color-darklight);
@@ -1026,9 +1030,10 @@ body {
     width: 26rem;
   }
 }
+/* #endregion CONTACT */
 
 /* ---------------- */
-/* SECTION: FOOTER */
+/* #region SECTION: FOOTER */
 /* ---------------- */
 .footer {
   background-color: var(--color-black);
@@ -1197,6 +1202,7 @@ body {
     height: 4rem;
   }
 }
+/* #endregion FOOTER */
 
 /* IMPORTANT-AF: */
 .hidden {
