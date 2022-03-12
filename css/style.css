@@ -28,6 +28,11 @@ body {
   font-weight: 400;
 }
 
+::selection {
+  background-color: rgba(240, 130, 12, 0.4);
+  /* taken from --color-orange */
+}
+
 /* ---------------- */
 /* REUSABLE COMPONENTS / HELPERS */
 /* ---------------- */
@@ -923,6 +928,7 @@ body {
   display: grid;
   grid-template-columns: 10rem 3fr;
   column-gap: 3rem;
+  row-gap: 1rem;
 }
 
 .form__label {
@@ -952,24 +958,10 @@ body {
 .form__textarea {
   height: 15rem;
   width: 32rem;
-  margin-bottom: 1rem;
 }
 .form__input:focus,
 .form__textarea:focus {
-  outline: var(--color-brown) dotted 2px;
-}
-.form__input:focus:invalid,
-.form__textarea:focus:invalid {
-  outline: var(--color-orange) dotted 2px;
-}
-
-.form__input:focus-visible,
-.form__textarea:focus-visible {
   outline: var(--color-brown) dashed 3px;
-}
-.form__input:focus-visible:invalid,
-.form__textarea:focus-visible:invalid {
-  outline: var(--color-orange) dashed 3px;
 }
 
 /* BUTTON */
@@ -999,6 +991,55 @@ body {
 .btn:focus-visible {
   outline: var(--color-brown) dashed 3px;
 }
+
+/* -------------- FORM VALIDATION -------------- */
+/* Error message <p>'s + input outline */
+.form-constraint {
+  grid-column: 2;
+  justify-self: start;
+
+  display: flex;
+  background-color: #f5c6c4;
+  border-radius: 1px;
+  padding: 0.8rem 1.2rem;
+  height: 0;
+  opacity: 0;
+
+  transition: all 0.2s;
+}
+.form-constraint__icon {
+  width: 20px;
+  height: 20px;
+  fill: #db140d;
+}
+.form-constraint__p {
+  color: #111;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.3;
+
+  align-self: flex-end;
+  margin-left: 4px;
+}
+.valid:focus {
+  outline: var(--color-brown) dotted 2px;
+}
+.valid:focus-visible {
+  outline: var(--color-brown) dashed 3px;
+}
+.invalid:focus {
+  outline: #db140d dotted 2px;
+}
+.invalid:focus-visible {
+  outline: #db140d dashed 3px;
+}
+.invalid + .form-constraint {
+  height: auto;
+  opacity: 1;
+  margin-bottom: 1rem;
+}
+/* ---------- END FORM VALIDATION ---------- */
+
 /* QUERY: Section Contact */
 @media only screen and (max-width: 53em) {
   .btn {

@@ -24,6 +24,11 @@ const imgFallbacks = document.querySelectorAll('img[data-fallback]');
 const inputCategory = document.querySelector('.menu__dropdown');
 const allMenuItems = document.querySelectorAll('.menu__items-grid');
 
+const contactForm = document.querySelector('.form');
+const formInputs = document.querySelectorAll('.form__input');
+const formTextarea = document.querySelector('.form__textarea');
+// const formBtnSubmit = document.querySelector('.form__submit');
+
 ///////////////////
 // #region Observer - Toggle Sticky Nav
 const stickyNav = function (entries) {
@@ -175,6 +180,64 @@ const toggleMenuCategory = function (ev) {
   );
 };
 inputCategory.addEventListener('change', toggleMenuCategory);
+
+/////////////////////////////////////////
+// #region Validate Form Input
+const patterns = {
+  name: new RegExp('^[a-z]{2,} [a-z]{2,}$', 'i'),
+  // ⌄SEE: ->  https://regex101.com/r/FHsYQi/2
+  //   prettier-ignore
+  email: new RegExp('^([a-z\\d\\.-]+)@([a-z\\d-]+)\\.([a-z]{2,8})(\\.[a-z]{2,8})?$', 'i'),
+  // ⌄ matches everything
+  message: new RegExp('^[^]+$'),
+};
+
+//////////////////////
+// Validate user input
+const validate = function (field, regex) {
+  if (regex.test(field.value)) {
+    field.classList.add('valid');
+    field.classList.remove('invalid');
+  } else {
+    field.classList.add('invalid');
+    field.classList.remove('valid');
+  }
+};
+
+// Callback to Run when Form Receives Input
+const passToValidator = function (ev) {
+  if (ev.target.type === 'submit' || !ev.target) return;
+
+  validate(ev.target, patterns[ev.target.name]);
+};
+
+contactForm.addEventListener('keyup', passToValidator);
+
+//////////////////////
+// Handle Various Error States
+// When Field is Blurred & Invalid -- Add backgroundColor
+// const controlBgColor = ev => {
+//   const evT = ev.target;
+
+//   if (evT.required && evT.classList.contains('invalid'))
+//     evT.style.backgroundColor = '#f5c6c4';
+
+//   // Remove the background color 3 seconds after blur
+//   if (evT.classList.contains('invalid'))
+//     setTimeout(() => (evT.style.backgroundColor = '#fff'), 3000);
+// };
+
+// // When Field is Focused -- Remove red background color -- for the case of a quick blur/focus
+// const removeBgColor = ev => (ev.target.style.backgroundColor = '#fff');
+
+// formInputs.forEach(input => {
+//   input.onblur = controlBgColor;
+//   input.onfocus = removeBgColor;
+// });
+// formTextarea.onblur = controlBgColor;
+// formTextarea.onfocus = removeBgColor;
+// ^ NOTE: it works fine, i just don't like it.
+// #endregion Validate Form Input
 
 ///////////////////
 // Footer Date (Year)

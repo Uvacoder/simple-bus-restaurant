@@ -102,10 +102,7 @@
     <section class="section section-location" id="section-location">
       <h1 class="h1 location__heading">Location</h1>
       <div
-        class="
-          flex-container
-          location__info-container location__info-container--1
-        "
+        class="flex-container location__info-container location__info-container--1"
       >
         <a
           class="location__icon-link"
@@ -128,10 +125,7 @@
         </p>
       </div>
       <div
-        class="
-          flex-container
-          location__info-container location__info-container--2
-        "
+        class="flex-container location__info-container location__info-container--2"
       >
         <a href="tel:+1-910-458-1212" class="location__icon-link">
           <svg class="location__icon">
@@ -279,11 +273,7 @@
       <div class="center">
         <div
           data-category="0"
-          class="
-            menu__items-grid menu__items-grid--reg
-            js--appetizers
-            visible-grid
-          "
+          class="menu__items-grid menu__items-grid--reg js--appetizers visible-grid"
         >
           <div class="menu__item">
             <div class="menu__head-copy">
@@ -759,6 +749,14 @@
               id="name"
               required
             />
+            <span class="form-constraint">
+              <svg class="form-constraint__icon">
+                <use xlink:href="img/sprite.svg#icon-warning"></use>
+              </svg>
+              <p class="form-constraint__p">
+                Provide your first and last name.
+              </p>
+            </span>
           </div>
 
           <div class="form__group">
@@ -770,6 +768,12 @@
               id="email"
               required
             />
+            <span class="form-constraint">
+              <svg class="form-constraint__icon">
+                <use xlink:href="img/sprite.svg#icon-warning"></use>
+              </svg>
+              <p class="form-constraint__p">Enter a valid email address.</p>
+            </span>
           </div>
 
           <div class="form__group">
@@ -781,6 +785,12 @@
               placeholder="form not functional."
               required
             ></textarea>
+            <span class="form-constraint">
+              <svg class="form-constraint__icon">
+                <use xlink:href="img/sprite.svg#icon-warning"></use>
+              </svg>
+              <p class="form-constraint__p">This field is required.</p>
+            </span>
           </div>
           <div class="center">
             <button type="submit" class="btn form__submit">Submit</button>
