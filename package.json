@@ -16,6 +16,8 @@
   },
   "homepage": "https://github.com/alex-anson/pearl-grille#readme",
   "devDependencies": {
-    "minify": "^8.0.4"
-  }
+    "minify": "^8.0.4",
+    "try-to-catch": "^3.0.1"
+  },
+  "type": "module"
 }
