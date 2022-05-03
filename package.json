@@ -2,10 +2,7 @@
   "name": "pearl_grille",
   "version": "1.0.0",
   "description": "seafood portfolio site",
-  "scripts": {
-    "start": "parcel index.html",
-    "build": "parcel build index.html"
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/alex-anson/pearl-grille.git"
@@ -16,7 +13,7 @@
     "url": "https://github.com/alex-anson/pearl-grille/issues"
   },
   "homepage": "https://github.com/alex-anson/pearl-grille#readme",
-  "dependencies": {
-    "parcel": "^2.5.0"
+  "devDependencies": {
+    "minify": "^8.0.4"
   }
 }
