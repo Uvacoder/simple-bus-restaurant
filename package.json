@@ -2,7 +2,9 @@
   "name": "pearl_grille",
   "version": "1.0.0",
   "description": "seafood portfolio site",
-  "scripts": {},
+  "scripts": {
+    "start": "live-server"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/alex-anson/pearl-grille.git"
