@@ -1222,17 +1222,37 @@ body {
   fill: #f18e24;
 }
 
+.ac-link {
+  text-decoration: none;
+  color: var(--color-orange);
+  padding: 2px 3px;
+
+  transition: all 0.2s;
+}
+
+.ac-link:hover {
+  color: var(--color-darklight);
+}
+
 .footer__link {
   padding: 2px;
   line-height: 0.8;
 }
+
+.ac-link:focus,
 .footer__link:focus {
   outline: var(--color-light) dotted 1px;
+}
+
+.footer__link:focus {
   background-color: var(--color-brown);
 }
+
 .footer__link--light:focus {
   background-color: var(--color-black);
 }
+
+.ac-link:focus-visible,
 .footer__link:focus-visible {
   outline: var(--color-light) dashed 2px;
 }
