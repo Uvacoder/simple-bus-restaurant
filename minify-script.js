@@ -23,25 +23,24 @@ const options = {
   },
 };
 
-// const filesToMinify = ['./index.html', './css/style.css', './js/script.js'];
-const filesToMinify = ['./css/test.css'];
+const filesToMinify = ['./index.html', './css/style.css', './js/script.js'];
 
 async function minifyStuff(files) {
-  // files.map(file => {
-  const [err, data] = await tryToCatch(minify, './css/test.css', options);
+  files.forEach(async file => {
+    const [err, data] = await tryToCatch(minify, file, options);
 
-  if (err) {
-    console.error(err.message);
-    return;
-  }
+    if (err) {
+      console.error(err.message);
+      return;
+    }
 
-  // console.log(data);
-  // console.log(typeof data);
+    // console.log(data);
+    // console.log(typeof data);
 
-  fs.writeFile('./css/test.css', data, { encoding: 'utf8', flag: 'w' }, err => {
-    if (err) console.error(`nooooo :sob: ${err}`);
-    console.log('success! :tada:');
+    fs.writeFile(file, data, { encoding: 'utf8', flag: 'w' }, err => {
+      if (err) console.error(`nooooo :sob: ${err}`);
+      console.log(`success: ${file} has been minified.`);
+    });
   });
-  // });
 }
 minifyStuff(filesToMinify);
