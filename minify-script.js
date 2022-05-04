@@ -8,7 +8,7 @@
 
 import { minify } from 'minify';
 import tryToCatch from 'try-to-catch';
-// import fs from 'fs'
+import fs from 'fs';
 
 const options = {
   html: {
@@ -23,14 +23,25 @@ const options = {
   },
 };
 
-async function minifyStuff() {
-  const [err, data] = await tryToCatch(minify, './js/script.js', options);
+// const filesToMinify = ['./index.html', './css/style.css', './js/script.js'];
+const filesToMinify = ['./css/test.css'];
+
+async function minifyStuff(files) {
+  // files.map(file => {
+  const [err, data] = await tryToCatch(minify, './css/test.css', options);
 
   if (err) {
     console.error(err.message);
     return;
   }
 
-  console.log(data);
+  // console.log(data);
+  // console.log(typeof data);
+
+  fs.writeFile('./css/test.css', data, { encoding: 'utf8', flag: 'w' }, err => {
+    if (err) console.error(`nooooo :sob: ${err}`);
+    console.log('success! :tada:');
+  });
+  // });
 }
-minifyStuff();
+minifyStuff(filesToMinify);
