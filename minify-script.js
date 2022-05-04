@@ -1,11 +1,5 @@
 // run `node minify-script`
 
-/** improvements, if you're ever bored for some reason (lol)
- * - pass the files you want to minify as args
- * - use Promise.all
- * - use fs & replace the contents of the given file with the contents that it spits back
- */
-
 import { minify } from 'minify';
 import tryToCatch from 'try-to-catch';
 import fs from 'fs';
