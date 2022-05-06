@@ -17,7 +17,8 @@ const options = {
   },
 };
 
-const filesToMinify = ['./index.html', './css/style.css', './js/script.js'];
+const filesToMinify = ['./index.html', './css/style.css'];
+// minifying JS causes weird sht to happen 😨
 
 async function minifyStuff(files) {
   files.forEach(async file => {
