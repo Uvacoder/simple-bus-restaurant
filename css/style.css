@@ -373,7 +373,7 @@ body {
 @media only screen and (min-resolution: 192dpi) and (min-width: 37.5em) and (max-width: 53em),
   only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em) and (max-width: 53em) {
   .section-about {
-    background-image: url(/img/hero-2x.webp);
+    background-image: url(../img/hero-2x.webp);
   }
 }
 @media only screen and (max-width: 45em) {
@@ -439,7 +439,7 @@ body {
     font-size: 21px;
   }
   .section-about {
-    background-image: url(/img/hero-mobile-1x.webp);
+    background-image: url(../img/hero-mobile-1x.webp);
     row-gap: 3rem;
   }
   .about__container {
@@ -456,7 +456,7 @@ body {
 @media only screen and (min-resolution: 192dpi) and (max-width: 37.5em),
   only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 37.5em) {
   .section-about {
-    background-image: url(/img/hero-mobile-2x.webp);
+    background-image: url(../img/hero-mobile-2x.webp);
   }
 }
 @media only screen and (max-width: 31em) {
