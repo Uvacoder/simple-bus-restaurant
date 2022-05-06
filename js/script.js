@@ -48,7 +48,7 @@ const stickyNav = function (entries) {
 };
 const headerObserver = new IntersectionObserver(stickyNav, {
   root: null,
-  rootMargin: `-${navHeight}px`,
+  // rootMargin: `-${navHeight}px`,
   threshold: 0,
 });
 headerObserver.observe(header);
@@ -93,7 +93,7 @@ const toggleNavArrow = function (entries) {
     : navArrow.classList.add('hidden');
 };
 
-const options = { root: nav, threshold: 1 };
+const options = { root: nav, threshold: 0.95 };
 
 const obsMobileSticky = new IntersectionObserver(toggleStickyArrow, options);
 const obsMobileNav = new IntersectionObserver(toggleNavArrow, options);
