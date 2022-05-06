@@ -319,7 +319,7 @@ body {
     height: 6rem;
   }
   .section-about {
-    background-image: url(/img/hero-1x.webp);
+    background-image: url(../img/hero-1x.webp);
     background-size: cover;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(2, min-content);
@@ -756,15 +756,16 @@ body {
   width: 35rem;
   margin: 3rem auto 4rem;
   border: 1px solid var(--color-brown);
+  border-radius: 0;
   box-shadow: 0 2px 3px rgba(94, 50, 2, 0.2);
+  outline-offset: 4px;
 }
 
 .menu__dropdown:focus {
-  border: 3px solid var(--color-light);
   outline: var(--color-brown) dotted 2px;
 }
 .menu__dropdown:focus-visible {
-  outline: var(--color-brown) dashed 3px;
+  outline: var(--color-brown) dashed 2px;
 }
 
 .menu__dropdown,
@@ -978,6 +979,8 @@ body {
   background-color: var(--color-white);
   padding: 4px;
   border: 1px solid rgba(94, 50, 2, 0.4);
+  border-radius: 0;
+  outline-offset: 3px;
 }
 
 .form__input {
@@ -995,7 +998,7 @@ body {
 }
 .form__input:focus,
 .form__textarea:focus {
-  outline: var(--color-brown) dashed 3px;
+  outline: var(--color-brown) dashed 2px;
 }
 
 /* BUTTON */
@@ -1012,6 +1015,7 @@ body {
   padding: 0.9rem 2rem;
   box-shadow: 0 2px 6px rgba(94, 50, 2, 0.3);
   cursor: pointer;
+  outline-offset: 4px;
 
   transform: perspective(1px) translateZ(0);
   transition-duration: 0.3s;
@@ -1024,7 +1028,6 @@ body {
   transform: scale(1.1);
 }
 .btn:focus {
-  border: 3px solid var(--color-white);
   outline: var(--color-brown) dotted 2px;
 }
 .btn:focus-visible {
@@ -1225,7 +1228,7 @@ body {
 .ac-link {
   text-decoration: none;
   color: var(--color-orange);
-  padding: 2px 3px;
+  outline-offset: 4px;
 
   transition: all 0.2s;
 }
